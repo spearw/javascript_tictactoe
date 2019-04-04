@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Tic Tac Toe</title>
+  <meta name="description" content="Tic Tac Toe">
+  <meta name="author" content="William Spear">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <div>Tic Tac Toe</div>
+        
+    </header>
+    <div class="navbar navbar-expand-lg navbar-light bg-light justify-content-center bottom-margin"> 
+            <span id="turnIndicator">X</span>
+            <span>'s turn</span>
+    </div>
+   
+
+    <div class="wrapper">
+        <div class="container">
+            <div id = "victoryMessage"></div>
+        </div>
+    </div>
+    
+    <table class="board">
+        <tr>
+        <td><button id="0" class="gameSquare"></button></td>
+        <td><button id="1" class="gameSquare"></button></td> 
+        <td><button id="2" class="gameSquare"></button></td>
+        </tr>
+        <tr>
+        <td><button id="3" class="gameSquare"></button></td>
+        <td><button id="4" class="gameSquare"></button></td> 
+        <td><button id="5" class="gameSquare"></button></td>
+        </tr>
+        <tr>
+        <td><button id="6" class="gameSquare"></button></td>
+        <td><button id="7" class="gameSquare"></button></td> 
+        <td><button id="8" class="gameSquare"></button></td>
+        </tr>
+    </table>
+
+    <footer class = "footer">
+        <div class = "container">
+            <span class="text-muted"><button id = "newgame">New Game</button></span>
+            <span class="text-muted"><button id = "ai">Play Vs. AI</button></span>
+        </div>
+    </footer>
+
+
+  <script src="javascript.js"></script>
+</body>
+</html>
