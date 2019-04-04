@@ -104,7 +104,7 @@ const gameController = (() => {
         displayController.resetBoard();
         xturn = true;
         document.getElementById("victoryMessage").innerHTML = ""
-        document.getElementById("turnIndicator").innerHTML = "X"      
+        dontroller.indicateTurn();      
         
         
         gameSquares = document.getElementsByClassName("gameSquare")
@@ -116,44 +116,73 @@ const gameController = (() => {
 
     const gameOver = () => {
 
+
         winConditions.forEach(function(condition) {
             
             if (gameboard.grid[condition[0]] == gameboard.grid[condition[1]] && gameboard.grid[condition[0]] == gameboard.grid[condition[2]] && (gameboard.grid[condition[0]] == "x" || gameboard.grid[condition[0]] == "o")) {
+                //x won
                 if (gameboard.grid[condition[0]] == "x"){
+
+
                     document.getElementById("victoryMessage").innerHTML = "X Wins!"
                     gameSquares = document.getElementsByClassName("gameSquare")
                     for (var i = 0; i < gameSquares.length; i++){
                         gameSquares[i].disabled = true;
                     }
+
                 }
+                // o won
                 else {
                     document.getElementById("victoryMessage").innerHTML = "O Wins!"
                     gameSquares = document.getElementsByClassName("gameSquare")
                     for (var i = 0; i < gameSquares.length; i++){
                         gameSquares[i].disabled = true;
                     }
-                }
-            }
-            else if (gameboard.grid.some(function(gameSquare){
-                return gameSquare == ""
-            })){
-                //squares still empty
 
-            }
-            else{
-                document.getElementById("victoryMessage").innerHTML = "It's a tie"
-                gameSquares = document.getElementsByClassName("gameSquare")
-                for (var i = 0; i < gameSquares.length; i++){
-                    gameSquares[i].disabled = true;
                 }
             }
+            //no one has won
+            else{
+            }
+
         });
+    
+        //board still has empty squares
+        if (gameboard.grid.some(function(gameSquare){
+            return gameSquare == ""
+        })){
+
+        }
+        //board doesn't have more empty squares
+        else{
+            document.getElementById("victoryMessage").innerHTML = "It's a tie"
+            gameSquares = document.getElementsByClassName("gameSquare")
+            for (var i = 0; i < gameSquares.length; i++){
+                gameSquares[i].disabled = true;
+            }
+
+        }
+        
     }
 
     return {
       takeTurn,
       resetGame,
     };
+})();
+
+const ai = (() => {
+
+    const minMax = (newGrid, depth, player) => {
+
+    }
+
+    const move = () => {
+        return minMax(grid, 0, player)
+    } 
+
+    return {
+         };
 })();
 
 document.getElementById("0").addEventListener("click", function(){
